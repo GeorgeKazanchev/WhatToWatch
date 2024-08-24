@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "outDir": "./src/main.js",
+        "module": "ESNext",
+        "target": "ES2015",
+        "noImplicitAny": true,
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "allowJs": true,
+        "jsx": "react",
+        "removeComments": true,
+        "sourceMap": true,
+        "strict": true
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}
