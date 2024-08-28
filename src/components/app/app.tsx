@@ -1,10 +1,11 @@
 import React from 'react';
-import * as styles from './app.module.scss';
+import { UserBlock } from '../user-block/user-block';
+import { authInfo } from '../../mocks/auth-info';
 
 export const App = () => {
     return (
-        <div className={styles.content}>
-            Hello world!
-        </div>
+        <UserBlock
+            isAuthorized={true}
+            avatarUrl={authInfo.avatarUrl} />
     );
 };
