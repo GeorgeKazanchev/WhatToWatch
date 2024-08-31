@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import * as styles from './index.module.scss';
 import { App } from './components/app/app';
+
+const svgIcons = document.querySelector('.svg-icons');
+svgIcons?.classList.add(styles.visuallyHidden);
 
 const root = document.querySelector('#root');
 
