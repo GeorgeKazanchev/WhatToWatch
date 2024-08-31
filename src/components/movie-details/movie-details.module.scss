@@ -1,0 +1,36 @@
+.text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    width: 635px;
+    font-size: 19px;
+    line-height: 27px;
+    color: #252525;
+}
+
+.text-column {
+    width: 155px;
+    margin-right: 35px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.details-item {
+    font-size: 19px;
+    line-height: 30px;
+}
+
+.details-name {
+    display: block;
+    color: #252525;
+    font-weight: bold;
+}
+
+.details-value {
+    color: #131313;
+}

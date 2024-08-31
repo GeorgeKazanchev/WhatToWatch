@@ -7,6 +7,9 @@ export const App = () => {
     return (
         <FilmPage
             film={promoFilm}
-            similarFilms={films} />
+            similarFilms={films}
+            isAuthorized={true}
+            authInfo={authInfo}
+        />
     );
 };
