@@ -11,11 +11,11 @@ export const Logo: React.FC<Props> = ({ isMainPage = false, isLight = false }) =
         <div>
             <a
                 href={isMainPage ? undefined : '/'}
-                className={`${styles.link} ${isLight ? styles['link-light'] : ''}`}
+                className={`${styles.link} ${isLight ? styles.linkLight : ''}`}
             >
-                <span className={styles['letter-1']}>W</span>
-                <span className={styles['letter-2']}>T</span>
-                <span className={styles['letter-3']}>W</span>
+                <span className={styles.letter1}>W</span>
+                <span className={styles.letter2}>T</span>
+                <span className={styles.letter3}>W</span>
             </a>
         </div>
     );

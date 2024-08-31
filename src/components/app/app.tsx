@@ -1,16 +1,12 @@
-import React, { Fragment } from 'react';
-import { UserBlock } from '../user-block/user-block';
-import { Footer } from '../footer/footer';
-import { authInfo } from '../../mocks/auth-info';
+import React from 'react';
+import { Main } from '../main/main';
+import { promoFilm, films, authInfo } from '../../mocks/index';
 
 export const App = () => {
     return (
-        <Fragment>
-            <UserBlock
-                isAuthorized={true}
-                avatarUrl={authInfo.avatarUrl} />
-            <Footer
-                isMainPage={false} />
-        </Fragment>
+        <Main
+            promoFilm={promoFilm}
+            films={films}
+            authInfo={authInfo} />
     );
 };

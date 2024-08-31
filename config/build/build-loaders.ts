@@ -9,7 +9,8 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         loader: 'css-loader',
         options: {
             modules: {
-                localIdentName: '[name]__[local]--[hash:base64:8]'
+                localIdentName: '[name]__[local]--[hash:base64:8]',
+                exportLocalsConvention: 'camelCase'
             }
         }
     };

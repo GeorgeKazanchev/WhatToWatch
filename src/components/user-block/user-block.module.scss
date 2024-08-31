@@ -9,6 +9,12 @@ $avatar-size: 63px;
     height: $avatar-size;
     overflow: hidden;
     border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: transform 0.2s;
+    }
 
     img {
         width: 100%;

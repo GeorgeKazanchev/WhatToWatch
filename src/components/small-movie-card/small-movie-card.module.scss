@@ -13,8 +13,6 @@ $gradient-end: rgba(0, 0, 0, 0.63);
     overflow: hidden;
     border-radius: 6px;
     -webkit-transition: $transition-duration -webkit-transform;
-    transition: $transition-duration -webkit-transform;
-    transition: $transition-duration transform;
     transition: $transition-duration transform, $transition-duration -webkit-transform;
 
     &:hover {

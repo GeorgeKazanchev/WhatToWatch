@@ -17,4 +17,4 @@ export const SmallMovieCard: React.FC<Props> = ({ film }) => {
             </h3>
         </article>
     );
-}
+};
