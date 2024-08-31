@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './catalog.module.scss';
-import { Film } from '../../types/film';
 import { SmallMovieCard } from '../small-movie-card/small-movie-card';
+import { Film } from '../../types/film';
 
 type Props = {
     films: Film[],
@@ -16,40 +16,34 @@ export const Catalog: React.FC<Props> = ({ films, isSimilarShown = false }) => {
                 {isSimilarShown ? 'More like this' : 'Catalog'}
             </h2>
 
-            {
-                !isSimilarShown && (
-                    <ul className={styles.genres}>
-                        <li className={`${styles.genre} ${styles.genreActive}`}>
-                            <a href="#" className={styles.genreLink}>All genres</a>
+            {!isSimilarShown && (
+                <ul className={styles.genres}>
+                    <li className={`${styles.genre} ${styles.genreActive}`}>
+                        <a href="#" className={styles.genreLink}>All genres</a>
+                    </li>
+
+                    {genres.map((genre) =>
+                        <li key={genre} className={styles.genre}>
+                            <a href="#" className={styles.genreLink}>{genre}</a>
                         </li>
-                        {
-                            genres.map((genre) =>
-                                <li key={genre} className={styles.genre}>
-                                    <a href="#" className={styles.genreLink}>{genre}</a>
-                                </li>
-                            )
-                        }
-                    </ul>
-                )
-            }
+                    )}
+                </ul>
+            )}
 
             <div className={styles.movies}>
-                {
-                    films.map((film) =>
-                        <SmallMovieCard
-                            key={film.id}
-                            film={film} />
-                    )
-                }
+                {films.map((film) =>
+                    <SmallMovieCard
+                        key={film.id}
+                        film={film}
+                    />
+                )}
             </div>
 
-            {
-                !isSimilarShown && (
-                    <div>
-                        <button className={styles.moreButton} type="button">Show more</button>
-                    </div>
-                )
-            }
+            {!isSimilarShown && (
+                <div>
+                    <button className={styles.moreButton} type="button">Show more</button>
+                </div>
+            )}
         </section>
     );
 };

@@ -11,7 +11,8 @@ export const Footer: React.FC<Props> = ({ isMainPage = false }) => {
         <footer>
             <Logo
                 isMainPage={isMainPage}
-                isLight={true} />
+                isLight={true}
+            />
             <div className={styles.copyright}>
                 <p>© 2024 What to watch Ltd.</p>
             </div>

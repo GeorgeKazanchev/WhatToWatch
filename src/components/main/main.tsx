@@ -19,13 +19,16 @@ export const Main: React.FC<Props> = ({ promoFilm, films }) => {
             <MovieCard
                 film={promoFilm}
                 isAuthorized={true}
-                authInfo={authInfo} />
+                authInfo={authInfo}
+            />
 
             <div className={styles.content}>
                 <Catalog
-                    films={films} />
+                    films={films}
+                />
                 <Footer
-                    isMainPage={true} />
+                    isMainPage={true}
+                />
             </div>
         </Fragment>
     );

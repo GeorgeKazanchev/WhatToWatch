@@ -14,10 +14,12 @@ export const Header: React.FC<Props> = ({ isAuthorized, avatarUrl = '', isMainPa
         <header className={styles.header}>
             <Logo
                 isMainPage={isMainPage}
-                isLight={false} />
+                isLight={false}
+            />
             <UserBlock
                 isAuthorized={isAuthorized}
-                avatarUrl={avatarUrl} />
+                avatarUrl={avatarUrl}
+            />
         </header>
     );
 };
