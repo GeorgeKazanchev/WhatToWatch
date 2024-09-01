@@ -25,6 +25,7 @@ export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo
                 isAuthorized={isAuthorized}
                 avatarUrl={authInfo?.avatarUrl}
                 isMainPage={true}
+                isMoviePage={true}
             />
 
             <div className={styles.wrap}>

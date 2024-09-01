@@ -7,11 +7,23 @@ type Props = {
     isAuthorized: boolean,
     avatarUrl?: string,
     isMainPage?: boolean,
+    isMoviePage?: boolean,
+    isUserPage?: boolean
 };
 
-export const Header: React.FC<Props> = ({ isAuthorized, avatarUrl = '', isMainPage = false }) => {
+export const Header: React.FC<Props> = (props) => {
+    const {
+        isAuthorized,
+        avatarUrl = '',
+        isMainPage = false,
+        isMoviePage = false,
+        isUserPage = false
+    } = props;
+
     return (
-        <header className={styles.header}>
+        <header className={
+            `${styles.header} ${isMoviePage ? styles.headerMoviePage : ''} ${isUserPage ? styles.headerUserPage : ''}`
+        }>
             <Logo
                 isMainPage={isMainPage}
                 isLight={false}
