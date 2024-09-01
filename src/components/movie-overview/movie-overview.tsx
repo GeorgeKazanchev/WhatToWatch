@@ -27,7 +27,7 @@ export const MovieOverview: React.FC<Props> = ({ film }) => {
     return (
         <Fragment>
             <div className={styles.rating}>
-                <div className={styles.score}>{film.rating}</div>
+                <div className={styles.score}>{film.rating.toFixed(1)}</div>
                 <p className={styles.meta}>
                     <span className={styles.level}>{getRatingLevel(film.rating)}</span>
                     <span className={styles.scoresCount}>

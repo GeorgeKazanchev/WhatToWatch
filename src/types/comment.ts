@@ -1,8 +1,8 @@
-export type CommentGet = {
+export type Comment = {
     id: number,
-    user: CommentAuthor,
+    author: CommentAuthor,
     rating: number,
-    comment: string,
+    text: string,
     date: Date,
 };
 

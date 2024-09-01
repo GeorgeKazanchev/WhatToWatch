@@ -8,11 +8,11 @@ import { AuthInfo } from '../../types/auth-info';
 type Props = {
     film: Film,
     isAuthorized: boolean,
-    authInfo: AuthInfo,
+    authInfo?: AuthInfo | null,
     isFull?: boolean
 };
 
-export const MovieCard: React.FC<Props> = ({ film, isAuthorized, authInfo, isFull = false }) => {
+export const MovieCard: React.FC<Props> = ({ film, isAuthorized, authInfo = null, isFull = false }) => {
     return (
         <section className={`${styles.card} ${isFull ? styles.cardFull : ''}`}>
             {isFull

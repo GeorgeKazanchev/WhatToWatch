@@ -8,11 +8,11 @@ import { AuthInfo } from '../../types/auth-info';
 type Props = {
     film: Film,
     isAuthorized: boolean,
-    authInfo: AuthInfo,
+    authInfo?: AuthInfo | null,
     isFull?: boolean
 };
 
-export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo, isFull = false }) => {
+export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo = null, isFull = false }) => {
     return (
         <Fragment>
             <div className={styles.background}>
@@ -23,7 +23,7 @@ export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo
 
             <Header
                 isAuthorized={isAuthorized}
-                avatarUrl={authInfo.avatarUrl}
+                avatarUrl={authInfo?.avatarUrl}
                 isMainPage={true}
             />
 
@@ -32,6 +32,7 @@ export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo
                     ? (
                         <MovieCardInfo
                             film={film}
+                            isAuthorized={isAuthorized}
                             isFull={isFull}
                         />
                     )
@@ -39,6 +40,7 @@ export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo
                         <div className={styles.info}>
                             <MovieCardInfo
                                 film={film}
+                                isAuthorized={isAuthorized}
                                 isFull={isFull}
                             />
                         </div>

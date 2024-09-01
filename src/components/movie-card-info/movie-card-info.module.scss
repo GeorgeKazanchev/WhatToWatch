@@ -59,9 +59,8 @@
 }
 
 .button {
-    @include btn;
-
     margin-right: 14px;
+    @include btn;
 
     &:last-child {
         margin-right: 0;

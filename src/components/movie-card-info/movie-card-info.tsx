@@ -4,10 +4,11 @@ import { Film } from '../../types/film';
 
 type Props = {
     film: Film,
+    isAuthorized: boolean,
     isFull?: boolean
 };
 
-export const MovieCardInfo: React.FC<Props> = ({ film, isFull = false }) => {
+export const MovieCardInfo: React.FC<Props> = ({ film, isAuthorized, isFull = false }) => {
     return (
         <Fragment>
             {!isFull && (
@@ -33,10 +34,13 @@ export const MovieCardInfo: React.FC<Props> = ({ film, isFull = false }) => {
                     </button>
                     <button className={styles.button} type="button">
                         <svg viewBox="0 0 19 20" width="19" height="20">
-                            <use xlinkHref="#add"></use>
+                            <use xlinkHref={film.isFavorite ? '#in-list' : '#add'}></use>
                         </svg>
                         <span>My list</span>
                     </button>
+                    {isAuthorized && (
+                        <a href="add-review.html" className={styles.button}>Add review</a>
+                    )}
                 </div>
             </div>
         </Fragment>

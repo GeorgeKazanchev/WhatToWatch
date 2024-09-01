@@ -10,10 +10,10 @@ type Props = {
     film: Film,
     similarFilms: Film[],
     isAuthorized: boolean,
-    authInfo: AuthInfo
+    authInfo?: AuthInfo | null
 };
 
-export const FilmPage: React.FC<Props> = ({ film, similarFilms, isAuthorized, authInfo }) => {
+export const FilmPage: React.FC<Props> = ({ film, similarFilms, isAuthorized, authInfo = null }) => {
     return (
         <Fragment>
             <MovieCard
