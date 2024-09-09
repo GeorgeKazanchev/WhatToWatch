@@ -7,8 +7,6 @@ export const LoginPage: React.FC = () => {
     return (
         <div className={styles.page}>
             <Header
-                isAuthorized={false}
-                isMainPage={false}
                 isUserPage={true}
             />
 

@@ -10,6 +10,7 @@ type Props = {
 
 export const Catalog: React.FC<Props> = ({ films, isSimilarShown = false }) => {
     const genres = Array.from(new Set(films.map((film) => film.genre))).sort();
+
     return (
         <section className={`${styles.catalog} ${isSimilarShown ? styles.catalogLikeThis : ''}`}>
             <h2 className={`${styles.title} ${isSimilarShown ? '' : styles.visuallyHidden}`}>

@@ -1,14 +1,17 @@
 import React, { Fragment } from 'react';
 import * as styles from './movie-card-info.module.scss';
+import { useAppSelector } from '../../hooks/redux-hooks';
 import { Film } from '../../types/film';
 
 type Props = {
     film: Film,
-    isAuthorized: boolean,
     isFull?: boolean
 };
 
-export const MovieCardInfo: React.FC<Props> = ({ film, isAuthorized, isFull = false }) => {
+export const MovieCardInfo: React.FC<Props> = ({ film, isFull = false }) => {
+    const authInfo = useAppSelector((state) => state.user.authInfo);
+    const isAuthorized = authInfo ? true : false;
+
     return (
         <Fragment>
             {!isFull && (

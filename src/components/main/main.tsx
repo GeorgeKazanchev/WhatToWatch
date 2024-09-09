@@ -1,25 +1,22 @@
 import React, { Fragment } from 'react';
 import * as styles from './main.module.scss';
+import { useAppSelector } from '../../hooks/redux-hooks';
 import { MovieCard } from '../movie-card/movie-card';
 import { Catalog } from '../catalog/catalog';
 import { Footer } from '../footer/footer';
-import { Film } from '../../types/film';
-import { AuthInfo } from '../../types/auth-info';
-import { authInfo } from '../../mocks/index';
 
-type Props = {
-    promoFilm: Film,
-    films: Film[],
-    authInfo: AuthInfo
-};
+export const Main: React.FC = () => {
+    const promoFilm = useAppSelector((state) => state.films.promoFilm);
+    const films = useAppSelector((state) => state.films.films);
 
-export const Main: React.FC<Props> = ({ promoFilm, films }) => {
+    if (!promoFilm) {
+        throw new Error('');    //  TODO: Handle this situation correctly
+    }
+
     return (
         <Fragment>
             <MovieCard
                 film={promoFilm}
-                isAuthorized={true}
-                authInfo={authInfo}
             />
 
             <div className={styles.content}>

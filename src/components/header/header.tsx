@@ -4,8 +4,6 @@ import { Logo } from '../logo/logo';
 import { UserBlock } from '../user-block/user-block';
 
 type Props = {
-    isAuthorized: boolean,
-    avatarUrl?: string,
     isMainPage?: boolean,
     isMoviePage?: boolean,
     isUserPage?: boolean
@@ -13,8 +11,6 @@ type Props = {
 
 export const Header: React.FC<Props> = (props) => {
     const {
-        isAuthorized,
-        avatarUrl = '',
         isMainPage = false,
         isMoviePage = false,
         isUserPage = false
@@ -28,10 +24,7 @@ export const Header: React.FC<Props> = (props) => {
                 isMainPage={isMainPage}
                 isLight={false}
             />
-            <UserBlock
-                isAuthorized={isAuthorized}
-                avatarUrl={avatarUrl}
-            />
+            <UserBlock />
         </header>
     );
 };

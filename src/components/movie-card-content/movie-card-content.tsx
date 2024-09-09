@@ -3,16 +3,13 @@ import * as styles from './movie-card-content.module.scss';
 import { Header } from '../header/header';
 import { MovieCardInfo } from '../movie-card-info/movie-card-info';
 import { Film } from '../../types/film';
-import { AuthInfo } from '../../types/auth-info';
 
 type Props = {
     film: Film,
-    isAuthorized: boolean,
-    authInfo?: AuthInfo | null,
     isFull?: boolean
 };
 
-export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo = null, isFull = false }) => {
+export const MovieCardContent: React.FC<Props> = ({ film, isFull = false }) => {
     return (
         <Fragment>
             <div className={styles.background}>
@@ -22,8 +19,6 @@ export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo
             <h1 className={styles.visuallyHidden}>WTW</h1>
 
             <Header
-                isAuthorized={isAuthorized}
-                avatarUrl={authInfo?.avatarUrl}
                 isMainPage={true}
                 isMoviePage={true}
             />
@@ -33,7 +28,6 @@ export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo
                     ? (
                         <MovieCardInfo
                             film={film}
-                            isAuthorized={isAuthorized}
                             isFull={isFull}
                         />
                     )
@@ -41,7 +35,6 @@ export const MovieCardContent: React.FC<Props> = ({ film, isAuthorized, authInfo
                         <div className={styles.info}>
                             <MovieCardInfo
                                 film={film}
-                                isAuthorized={isAuthorized}
                                 isFull={isFull}
                             />
                         </div>

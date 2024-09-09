@@ -1,12 +1,19 @@
 import React from 'react';
 import * as styles from './user-block.module.scss';
+import { useAppSelector } from '../../hooks/redux-hooks';
 
-type Props = {
-    isAuthorized: boolean,
-    avatarUrl?: string,
-};
+export const UserBlock: React.FC = () => {
+    const authInfo = useAppSelector((state) => state.user.authInfo);
+    let isAuthorized: boolean, avatarUrl: string;
 
-export const UserBlock: React.FC<Props> = ({ isAuthorized, avatarUrl = '' }) => {
+    if (authInfo) {
+        isAuthorized = true;
+        avatarUrl = authInfo.avatarUrl;
+    } else {
+        isAuthorized = false;
+        avatarUrl = '';
+    }
+
     return (
         <div className={styles.container}>
             {isAuthorized

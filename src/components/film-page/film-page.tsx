@@ -4,22 +4,17 @@ import { MovieCard } from '../movie-card/movie-card';
 import { Catalog } from '../catalog/catalog';
 import { Footer } from '../footer/footer';
 import { Film } from '../../types/film';
-import { AuthInfo } from '../../types/auth-info';
 
 type Props = {
     film: Film,
-    similarFilms: Film[],
-    isAuthorized: boolean,
-    authInfo?: AuthInfo | null
+    similarFilms: Film[]
 };
 
-export const FilmPage: React.FC<Props> = ({ film, similarFilms, isAuthorized, authInfo = null }) => {
+export const FilmPage: React.FC<Props> = ({ film, similarFilms }) => {
     return (
         <Fragment>
             <MovieCard
                 film={film}
-                isAuthorized={isAuthorized}
-                authInfo={authInfo}
                 isFull={true}
             />
             <div className={styles.content}>
