@@ -15,7 +15,7 @@ export const filmsSlice = createSlice({
     name: 'films',
     initialState,
     reducers: {
-        loadPromoFilm: (state: FilmsState = initialState, action: PayloadAction<Film>) => {
+        setPromoFilm: (state: FilmsState = initialState, action: PayloadAction<Film | null>) => {
             state.promoFilm = action.payload;
         },
         loadFilms: (state: FilmsState = initialState, action: PayloadAction<Film[]>) => {
@@ -25,4 +25,5 @@ export const filmsSlice = createSlice({
 });
 
 export default filmsSlice.reducer;
-export const { loadPromoFilm, loadFilms } = filmsSlice.actions;
+export const { setPromoFilm, loadFilms } = filmsSlice.actions;
+export type { FilmsState };

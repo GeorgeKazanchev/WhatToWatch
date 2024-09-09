@@ -21,3 +21,4 @@ export const userSlice = createSlice({
 
 export default userSlice.reducer;
 export const { setAuthInfo } = userSlice.actions;
+export type { UserState };

@@ -4,7 +4,7 @@ import store from './store/store';
 import * as styles from './index.module.scss';
 import { App } from './components/app/app';
 import { Provider } from 'react-redux';
-import { loadPromoFilm, loadFilms } from './store/reducers/films/films';
+import { setPromoFilm, loadFilms } from './store/reducers/films/films';
 import { setAuthInfo } from './store/reducers/user/user';
 import { promoFilm, films, authInfo } from './mocks';
 
@@ -17,7 +17,7 @@ if (!root) {
     throw new Error('Root not found');
 }
 
-store.dispatch(loadPromoFilm(promoFilm));
+store.dispatch(setPromoFilm(promoFilm));
 store.dispatch(loadFilms(films));
 store.dispatch(setAuthInfo(authInfo));
 
