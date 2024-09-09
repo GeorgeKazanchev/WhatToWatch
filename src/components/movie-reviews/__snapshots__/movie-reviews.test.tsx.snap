@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie reviews Correctly renders 1`] = `
+<div>
+  <div>
+    <div>
+      <blockquote>
+        <p>
+          Wes Anderson's films are really hard to describe or define. Suffice to say that he is unique in his style--very unique. This uniqueness is what makes "The Grand Budapest Hotel" worth seeing. It's an odd story where a story is told within a story--and it's filled with famous actors making lots of odd cameos. And, like Anderson's other films, it's full of odd characters, unusual dialog and brisk-paced editing. And, not surprisingly, it's NOTHING like other films by other directors.
+The bottom line is that all these weird factors work together to make a film that you'll probably enjoy--but, like me, you won't be exactly sure why!
+        </p>
+        <footer>
+          <cite>
+            planktonrules
+          </cite>
+          <time
+            dateTime="2014-06-15"
+          >
+            June 15, 2014
+          </time>
+        </footer>
+      </blockquote>
+      <div>
+        8.0
+      </div>
+    </div>
+    <div>
+      <blockquote>
+        <p>
+          If you like Wes Anderson, you will love this movie. Witty, entertaining and pleasant, it is a comedy in his unique style, that hits all the tones and notes that make him a unique and original director.
+        </p>
+        <footer>
+          <cite>
+            perica-43151
+          </cite>
+          <time
+            dateTime="2018-06-27"
+          >
+            June 27, 2018
+          </time>
+        </footer>
+      </blockquote>
+      <div>
+        9.0
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <blockquote>
+        <p>
+          A totally dysfunctional and unrelated cast, an incomprehensible story and tons and tons of computer graphics. The result is a confusing and totally boring movie. A waste of money.
+        </p>
+        <footer>
+          <cite>
+            iliasalk
+          </cite>
+          <time
+            dateTime="2018-12-21"
+          >
+            December 21, 2018
+          </time>
+        </footer>
+      </blockquote>
+      <div>
+        3.0
+      </div>
+    </div>
+  </div>
+</div>
+`;

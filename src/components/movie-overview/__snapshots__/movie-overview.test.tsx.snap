@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie overview Correctly renders 1`] = `
+[
+  <div>
+    <div>
+      5.2
+    </div>
+    <p>
+      <span>
+        Good
+      </span>
+      <span>
+        1644 ratings
+      </span>
+    </p>
+  </div>,
+  <div>
+    <p>
+      The second installment of the "Fantastic Beasts" series featuring the adventures of Magizoologist Newt Scamander.
+    </p>
+    <p>
+      <strong>
+        Director: 
+        David Yates
+      </strong>
+    </p>
+    <p>
+      <strong>
+        Starring: 
+        Eddie Redmayne, Katherine Waterston, Dan Fogler
+      </strong>
+    </p>
+  </div>,
+]
+`;

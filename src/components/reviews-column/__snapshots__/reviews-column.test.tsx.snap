@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reviews column Correctly renders 1`] = `
+<div>
+  <div>
+    <blockquote>
+      <p>
+        If you like Wes Anderson, you will love this movie. Witty, entertaining and pleasant, it is a comedy in his unique style, that hits all the tones and notes that make him a unique and original director.
+      </p>
+      <footer>
+        <cite>
+          perica-43151
+        </cite>
+        <time
+          dateTime="2018-06-27"
+        >
+          June 27, 2018
+        </time>
+      </footer>
+    </blockquote>
+    <div>
+      9.0
+    </div>
+  </div>
+  <div>
+    <blockquote>
+      <p>
+        A totally dysfunctional and unrelated cast, an incomprehensible story and tons and tons of computer graphics. The result is a confusing and totally boring movie. A waste of money.
+      </p>
+      <footer>
+        <cite>
+          iliasalk
+        </cite>
+        <time
+          dateTime="2018-12-21"
+        >
+          December 21, 2018
+        </time>
+      </footer>
+    </blockquote>
+    <div>
+      3.0
+    </div>
+  </div>
+</div>
+`;

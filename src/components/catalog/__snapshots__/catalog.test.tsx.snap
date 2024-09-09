@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Catalog Correctly renders 1`] = `
+<section
+  className="undefined "
+>
+  <h2
+    className="undefined undefined"
+  >
+    Catalog
+  </h2>
+  <ul>
+    <li
+      className="undefined undefined"
+    >
+      <a
+        href="#"
+      >
+        All genres
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+      >
+        Biography
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+      >
+        Drama
+      </a>
+    </li>
+  </ul>
+  <div>
+    <article>
+      <div>
+        <img
+          alt="The Aviator"
+          height="175"
+          src="/img/aviator.jpg"
+          width="280"
+        />
+      </div>
+      <h3>
+        <a
+          href="/films/1"
+        >
+          The Aviator
+        </a>
+      </h3>
+    </article>
+    <article>
+      <div>
+        <img
+          alt="We Need to Talk About Kevin"
+          height="175"
+          src="/img/we-need-to-talk-about-kevin.jpg"
+          width="280"
+        />
+      </div>
+      <h3>
+        <a
+          href="/films/2"
+        >
+          We Need to Talk About Kevin
+        </a>
+      </h3>
+    </article>
+  </div>
+  <div>
+    <button
+      type="button"
+    >
+      Show more
+    </button>
+  </div>
+</section>
+`;

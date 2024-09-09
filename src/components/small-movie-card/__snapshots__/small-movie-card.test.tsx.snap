@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Small movie card Correctly renders 1`] = `
+<article>
+  <div>
+    <img
+      alt="Fantastic Beasts: The Crimes of Grindelwald"
+      height="175"
+      src="/img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+      width="280"
+    />
+  </div>
+  <h3>
+    <a
+      href="/films/5"
+    >
+      Fantastic Beasts: The Crimes of Grindelwald
+    </a>
+  </h3>
+</article>
+`;

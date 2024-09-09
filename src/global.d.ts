@@ -5,3 +5,5 @@ declare module '*.module.scss' {
     const styles: IClassNames;
     export = styles;
 }
+
+declare module 'react-test-renderer';
