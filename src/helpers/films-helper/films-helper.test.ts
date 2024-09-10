@@ -1,6 +1,6 @@
-import { it, expect } from '@jest/globals';
+import { describe, it, expect } from '@jest/globals';
 import { Film } from '../../types/film';
-import { getGenres } from './films-helper';
+import { getGenres, getRuntimeString, getRatingLevel, getDateAttributeString } from './films-helper';
 
 const testFilms: Film[] = [
     {
@@ -86,24 +86,82 @@ const testFilms: Film[] = [
     }
 ];
 
-it('Should return 2 genres from 2 films with different genres', () => {
-    const genres = getGenres([testFilms[0], testFilms[1]]);
-    expect(genres).toHaveLength(2);
-    expect(genres).toContain('Biography');
-    expect(genres).toContain('Fantasy');
+describe('Get genres', () => {
+    it('Should return 2 genres from 2 films with different genres', () => {
+        const genres = getGenres([testFilms[0], testFilms[1]]);
+        expect(genres).toHaveLength(2);
+        expect(genres).toContain('Biography');
+        expect(genres).toContain('Fantasy');
+    });
+
+    it('Should return 1 genre from 2 films with the same genre', () => {
+        const genres = getGenres([testFilms[1], testFilms[2]]);
+        expect(genres).toHaveLength(1);
+        expect(genres).toContain('Biography');
+    });
+
+    it('Should return 1 genre from 1 film', () => {
+        const genres = getGenres([testFilms[0]]);
+        expect(genres).toHaveLength(1);
+    });
+
+    it('Should return an empty genre list', () => {
+        expect(getGenres([])).toEqual([]);
+    });
 });
 
-it('Should return 1 genre from 2 films with the same genre', () => {
-    const genres = getGenres([testFilms[1], testFilms[2]]);
-    expect(genres).toHaveLength(1);
-    expect(genres).toContain('Biography');
+describe('Get runtime string', () => {
+    it('Should return 0', () => {
+        expect(getRuntimeString(0)).toEqual('0');
+    });
+
+    it('Should return minutes only', () => {
+        expect(getRuntimeString(30)).toEqual('30m');
+    });
+
+    it('Should return hours and minutes', () => {
+        expect(getRuntimeString(150)).toEqual('2h 30m');
+    });
+
+    it('Should throw error when a negative value was passed', () => {
+        expect(() => { getRuntimeString(-1) }).toThrowError(RangeError);
+    });
 });
 
-it('Should return 1 genre from 1 film', () => {
-    const genres = getGenres([testFilms[0]]);
-    expect(genres).toHaveLength(1);
+describe('Get rating level', () => {
+    it('Should return the lowest level', () => {
+        expect(getRatingLevel(0)).toEqual('Bad');
+    });
+
+    it('Should return the highest level', () => {
+        expect(getRatingLevel(10)).toEqual('Awesome');
+    });
+
+    it('Should throw error when too large value was passed', () => {
+        expect(() => { getRatingLevel(11) }).toThrowError(RangeError);
+    });
+
+    it('Should throw error when a negative value was passed', () => {
+        expect(() => { getRatingLevel(-1) }).toThrowError(RangeError);
+    });
 });
 
-it('Should return an empty genre list', () => {
-    expect(getGenres([])).toEqual([]);
+describe('Get date attribute string', () => {
+    it('Should return correct Unix epoch string', () => {
+        expect(getDateAttributeString(new Date(0))).toEqual('1970-01-01');
+    });
+
+    it('Should return correct date with 2-sign day number', () => {
+        const date = new Date(2024, 0, 11);
+        const utcMonth = date.getUTCMonth() + 1;
+        const utcDate = date.getUTCDate();
+        expect(getDateAttributeString(date)).toEqual(`2024-0${utcMonth}-${utcDate}`);
+    });
+
+    it('Should return correct date with 2-sign month number', () => {
+        const date = new Date(2024, 10, 2);
+        const utcMonth = date.getUTCMonth() + 1;
+        const utcDate = date.getUTCDate();
+        expect(getDateAttributeString(date)).toEqual(`2024-${utcMonth}-0${utcDate}`);
+    });
 });

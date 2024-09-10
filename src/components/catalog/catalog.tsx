@@ -2,7 +2,7 @@ import React from 'react';
 import * as styles from './catalog.module.scss';
 import { SmallMovieCard } from '../small-movie-card/small-movie-card';
 import { Film } from '../../types/film';
-import { getGenres } from '../../helpers/index';
+import { getGenres } from '../../helpers';
 
 type Props = {
     films: Film[],
