@@ -2,6 +2,7 @@ import React from 'react';
 import * as styles from './catalog.module.scss';
 import { SmallMovieCard } from '../small-movie-card/small-movie-card';
 import { Film } from '../../types/film';
+import { getGenres } from '../../helpers/index';
 
 type Props = {
     films: Film[],
@@ -9,7 +10,7 @@ type Props = {
 };
 
 export const Catalog: React.FC<Props> = ({ films, isSimilarShown = false }) => {
-    const genres = Array.from(new Set(films.map((film) => film.genre))).sort();
+    const genres = getGenres(films);
 
     return (
         <section className={`${styles.catalog} ${isSimilarShown ? styles.catalogLikeThis : ''}`}>
