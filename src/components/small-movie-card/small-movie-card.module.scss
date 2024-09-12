@@ -1,7 +1,6 @@
 $transition-duration: 0.2s;
 $scale-value: 1.2;
 $object-fit: 'cover';
-
 $gradient-start: rgba(0, 0, 0, 0);
 $gradient-end: rgba(0, 0, 0, 0.63);
 
@@ -12,12 +11,10 @@ $gradient-end: rgba(0, 0, 0, 0.63);
     margin-bottom: 55px;
     overflow: hidden;
     border-radius: 6px;
-    -webkit-transition: $transition-duration -webkit-transform;
     transition: $transition-duration transform, $transition-duration -webkit-transform;
 
     &:hover {
         z-index: 3;
-        -webkit-transform: scale($scale-value);
         transform: scale($scale-value);
     }
 
@@ -33,7 +30,6 @@ $gradient-end: rgba(0, 0, 0, 0.63);
         width: 100%;
         height: 100%;
         vertical-align: top;
-        -o-object-fit: $object-fit;
         object-fit: $object-fit;
     }
 }

@@ -1,9 +1,5 @@
 @mixin btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     min-width: 128px;
     padding: 13px 30px;
@@ -15,14 +11,12 @@
     background-color: rgba(0, 0, 0, 0.26);
     border: none;
     border-radius: 8px;
-    -webkit-transition: 0.2s background-color, 0.2s -webkit-transform;
     transition: 0.2s background-color, 0.2s transform, 0.2s -webkit-transform;
     will-change: transform;
     cursor: pointer;
 
     &:hover {
-        background: rgba(0, 0, 0, 0.51);
-        -webkit-transform: scale(1.1);
+        background-color: rgba(0, 0, 0, 0.51);
         transform: scale(1.1);
     }
 
@@ -43,6 +37,5 @@
     white-space: nowrap;
     border: 0;
     clip: rect(0, 0, 0, 0);
-    -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
 }

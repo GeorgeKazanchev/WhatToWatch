@@ -1,4 +1,4 @@
-@import '../../mixins.scss';
+@import '../../mixins';
 
 .visually-hidden {
     @include visually-hidden;
@@ -27,9 +27,7 @@
         width: 100%;
         height: 100%;
         vertical-align: top;
-        -o-object-fit: cover;
         object-fit: cover;
-        -o-object-position: center top;
         object-position: center top;
     }
 }
@@ -42,8 +40,6 @@
 }
 
 .info {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-align: start;
     -ms-flex-align: start;

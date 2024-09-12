@@ -1,4 +1,4 @@
-@import '../../mixins.scss';
+@import '../../mixins';
 
 .visually-hidden {
     @include visually-hidden;
@@ -28,10 +28,7 @@
 }
 
 .genres {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 0;
     padding: 25px 0;
@@ -63,7 +60,6 @@
     padding-bottom: 15px;
     text-decoration: none;
     color: #dfcf77;
-    -webkit-transition: font-weight;
     transition: font-weight;
 
     &:hover {
@@ -81,18 +77,13 @@
         bottom: 0;
         display: none;
         height: 1px;
-        background: #d9cd8d;
+        background-color: #d9cd8d;
     }
 }
 
 .movies {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
     margin-bottom: 60px;
 
@@ -112,7 +103,6 @@
     background: none;
     border: 1px solid rgba(217, 202, 116, 0.2);
     border-radius: 8px;
-    -webkit-transition: border-color 0.2s;
     transition: border-color 0.2s;
     cursor: pointer;
 

@@ -1,9 +1,5 @@
 .rating {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     padding-top: 35px;
     padding-bottom: 25px;
@@ -15,13 +11,11 @@
     font-size: 30px;
     line-height: 36px;
     color: rgba(0, 0, 0, 0.5);
-    background: rgba(255, 255, 255, 0.24);
+    background-color: rgba(255, 255, 255, 0.24);
     border-radius: 8px;
 }
 
 .meta {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: 0;
     font-size: 19px;

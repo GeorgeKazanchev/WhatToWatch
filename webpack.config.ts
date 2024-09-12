@@ -4,7 +4,7 @@ import 'webpack-dev-server';
 import { buildWebpack } from './config/build/build-webpack';
 import { BuildMode } from './config/build/types/types';
 
-interface EnvVariables {
+type EnvVariables = {
     mode: BuildMode;
     port: number;
 }
