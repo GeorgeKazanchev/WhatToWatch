@@ -1,4 +1,5 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import autoprefixer from 'autoprefixer';
 import { ModuleOptions } from 'webpack';
 import { BuildOptions } from './types/types';
 
@@ -15,11 +16,27 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         }
     };
 
+    const postcssLoader = {
+        loader: 'postcss-loader',
+        options: {
+            postcssOptions: {
+                plugins: [
+                    autoprefixer({
+                        overrideBrowserslist: [
+                            'last 2 version'
+                        ]
+                    })
+                ]
+            }
+        }
+    };
+
     const stylesLoader = {
         test: /\.s[ac]ss$/i,
         use: [
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             cssLoader,
+            postcssLoader,
             'sass-loader'
         ]
     };

@@ -11,7 +11,7 @@ $gradient-end: rgba(0, 0, 0, 0.63);
     margin-bottom: 55px;
     overflow: hidden;
     border-radius: 6px;
-    transition: $transition-duration transform, $transition-duration -webkit-transform;
+    transition: $transition-duration transform;
 
     &:hover {
         z-index: 3;
@@ -47,9 +47,6 @@ $gradient-end: rgba(0, 0, 0, 0.63);
         bottom: 0;
         left: 0;
         right: 0;
-        background-image: -webkit-gradient(linear, left top, left bottom,
-                color-stop(25%, $gradient-start),
-                color-stop(97%, $gradient-end));
         background-image: linear-gradient(to bottom,
                 $gradient-start 25%,
                 $gradient-end 97%);

@@ -42,16 +42,6 @@
     &:last-child {
         margin-right: 0;
     }
-
-    &-active {
-        .genre-link {
-            font-weight: bold;
-
-            &::after {
-                display: block;
-            }
-        }
-    }
 }
 
 .genre-link {
@@ -61,12 +51,6 @@
     text-decoration: none;
     color: #dfcf77;
     transition: font-weight;
-
-    &:hover {
-        &::after {
-            display: block;
-        }
-    }
 
     &::after {
         content: '';
@@ -78,6 +62,18 @@
         display: none;
         height: 1px;
         background-color: #d9cd8d;
+    }
+
+    &:hover::after {
+        display: block;
+    }
+}
+
+.genre-active .genre-link {
+    font-weight: bold;
+
+    &::after {
+        display: block;
     }
 }
 

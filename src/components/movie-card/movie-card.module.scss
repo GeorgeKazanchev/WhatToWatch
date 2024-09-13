@@ -77,16 +77,6 @@ $light-color: #eee5b5;
     &:last-child {
         margin-right: 0;
     }
-
-    &-active {
-        .nav-link {
-            font-weight: bold;
-
-            &::after {
-                display: block;
-            }
-        }
-    }
 }
 
 .nav-link {
@@ -95,12 +85,6 @@ $light-color: #eee5b5;
     padding-bottom: 19px;
     text-decoration: none;
     color: $light-color;
-
-    &:hover {
-        &::after {
-            display: block;
-        }
-    }
 
     &::after {
         content: '';
@@ -112,5 +96,17 @@ $light-color: #eee5b5;
         display: none;
         height: 4px;
         background-color: $light-color;
+    }
+
+    &:hover::after {
+        display: block;
+    }
+}
+
+.nav-item-active .nav-link {
+    font-weight: bold;
+
+    &::after {
+        display: block;
     }
 }
