@@ -5,7 +5,6 @@ exports[`Footer Correctly renders 1`] = `
   <div>
     <a
       className="undefined undefined"
-      href="/"
     >
       <span>
         W

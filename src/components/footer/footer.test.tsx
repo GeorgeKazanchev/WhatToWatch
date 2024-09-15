@@ -7,7 +7,9 @@ describe('Footer', () => {
     it('Correctly renders', () => {
         const tree = renderer
             .create(
-                <Footer />
+                <Footer
+                    isMainPage={true}
+                />
             )
             .toJSON();
 

@@ -19,7 +19,7 @@ export const MovieCardContent: React.FC<Props> = ({ film, isFull = false }) => {
             <h1 className={styles.visuallyHidden}>WTW</h1>
 
             <Header
-                isMainPage={true}
+                isMainPage={!isFull}
                 isMoviePage={true}
             />
 

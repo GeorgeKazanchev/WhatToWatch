@@ -4,7 +4,6 @@ exports[`Logo Correctly renders 1`] = `
 <div>
   <a
     className="undefined "
-    href="/"
   >
     <span>
       W

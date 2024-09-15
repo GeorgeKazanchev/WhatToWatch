@@ -7,7 +7,9 @@ describe('Logo', () => {
     it('Correctly renders', () => {
         const tree = renderer
             .create(
-                <Logo />
+                <Logo
+                    isMainPage={true}
+                />
             )
             .toJSON();
 
