@@ -7,7 +7,7 @@ export const promoFilm: Film = {
         posterSrc: 'img/the-grand-budapest-hotel-poster.jpg',
         previewSrc: '#',
         backgroundSrc: 'img/bg-the-grand-budapest-hotel.jpg',
-        backgroundColor: '#ffffff'
+        backgroundColor: '#e1b0b2'
     },
     videos: {
         videoLink: '#',

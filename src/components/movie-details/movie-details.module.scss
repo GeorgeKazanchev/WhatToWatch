@@ -1,3 +1,6 @@
+$title-font-color: #dfcf77;
+$item-font-color: #eee5b5;
+
 .text {
     display: flex;
     align-items: flex-start;
@@ -23,10 +26,10 @@
 
 .details-name {
     display: block;
-    color: #252525;
+    color: rgba($title-font-color, 0.7);
     font-weight: bold;
 }
 
 .details-value {
-    color: #131313;
+    color: rgba($item-font-color, 0.8);
 }

@@ -1,3 +1,5 @@
+$item-font-color: #eee5b5;
+
 .column {
     width: calc((100% - 60px) / 2);
     max-width: 380px;
@@ -36,13 +38,14 @@
     margin-bottom: 15px;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: rgba($item-font-color, 0.8);
 }
 
 .details {
     display: flex;
     font-size: 16px;
     line-height: 27px;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba($item-font-color, 0.5);
 }
 
 .author {
@@ -70,7 +73,7 @@
     font-size: 19px;
     line-height: 25px;
     font-weight: 500;
-    color: #353535;
-    background-color: rgba(255, 255, 255, 0.24);
+    color: rgba($item-font-color, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
 }

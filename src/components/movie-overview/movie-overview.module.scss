@@ -1,3 +1,6 @@
+$title-font-color: #dfcf77;
+$item-font-color: #eee5b5;
+
 .rating {
     display: flex;
     align-items: center;
@@ -10,8 +13,8 @@
     padding: 8px 12px;
     font-size: 30px;
     line-height: 36px;
-    color: rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 255, 255, 0.24);
+    color: rgba($item-font-color, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
 }
 
@@ -19,7 +22,7 @@
     display: flex;
     margin: 0;
     font-size: 19px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba($item-font-color, 0.7);
 }
 
 .level {
@@ -34,22 +37,32 @@
 }
 
 .scores-count {
-    color: #382c2a;
+    color: rgba($item-font-color, 0.5);
 }
 
-.text {
+.details {
     width: 635px;
     font-size: 19px;
     line-height: 27px;
-    color: #252525;
+    color: rgba($item-font-color, 0.8);
+}
+
+.details-item {             //  Add some free space under a film's description
+    &:first-of-type {
+        margin-bottom: 50px;
+    }
 }
 
 .director {
     line-height: 21px;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba($item-font-color, 0.8);
 }
 
 .starring {
     line-height: 24px;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba($item-font-color, 0.8);
+}
+
+.details-title {
+    color: rgba($title-font-color, 0.7);
 }

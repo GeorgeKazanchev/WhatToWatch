@@ -20,19 +20,19 @@ export const MovieOverview: React.FC<Props> = ({ film }) => {
                 </p>
             </div>
 
-            <div className={styles.text}>
+            <div className={styles.details}>
                 {/* TODO: The description should be divided into several lines */}
-                <p>
+                <p className={styles.detailsItem}>
                     {film.description}
                 </p>
 
-                <p className={styles.director}>
-                    <strong>Director: {film.director}</strong>
+                <p className={`${styles.detailsItem} ${styles.director}`}>
+                    <strong className={styles.detailsTitle}>Director:</strong> {film.director}
                 </p>
 
                 {/* TODO: Should be shown like this: ActorA, ActorB and ActorC */}
-                <p className={styles.starring}>
-                    <strong>Starring: {film.starring.join(', ')}</strong>
+                <p className={`${styles.detailsItem} ${styles.starring}`}>
+                    <strong className={styles.detailsTitle}>Starring:</strong> {film.starring.join(', ')}
                 </p>
             </div>
         </Fragment>
