@@ -1,10 +1,14 @@
 import React, { Fragment } from 'react';
-import { createBrowserRouter, LoaderFunction, Outlet, RouterProvider, ScrollRestoration } from 'react-router-dom';
+import { createBrowserRouter, LoaderFunction, Outlet, redirect, RouterProvider, ScrollRestoration } from 'react-router-dom';
 import { useAppSelector } from '../hooks/redux-hooks';
 import { App } from '../components/app/app';
 import { FilmPage } from '../components/film-page/film-page';
+import { MovieOverview } from '../components/movie-overview/movie-overview';
+import { MovieDetails } from '../components/movie-details/movie-details';
+import { MovieReviews } from '../components/movie-reviews/movie-reviews';
 import { NotFoundPage } from '../components/not-found-page/not-found-page';
 import { getSimilarFilms } from '../helpers/films-helper/films-helper';
+import { comments } from '../mocks';
 
 const Root: React.FC = () => {
     return (
@@ -43,7 +47,31 @@ export const AppRouterProvider = () => {
                             film,
                             similarFilms
                         };
-                    }) satisfies LoaderFunction
+                    }) satisfies LoaderFunction,
+                    children: [     //  TODO: Change data in props to real one (not mocks)
+                        {
+                            index: true,
+                            loader: async () => redirect('overview')
+                        },
+                        {
+                            path: 'overview',
+                            element: <MovieOverview
+                                film={films[0]}
+                            />
+                        },
+                        {
+                            path: 'details',
+                            element: <MovieDetails
+                                film={films[0]}
+                            />
+                        },
+                        {
+                            path: 'reviews',
+                            element: <MovieReviews
+                                reviews={comments}
+                            />
+                        }
+                    ]
                 }
             ]
         }

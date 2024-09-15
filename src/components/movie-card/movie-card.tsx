@@ -1,7 +1,8 @@
 import React from 'react';
 import * as styles from './movie-card.module.scss';
+import { Outlet } from 'react-router-dom';
 import { MovieCardContent } from '../movie-card-content/movie-card-content';
-import { MovieOverview } from '../movie-overview/movie-overview';
+import { MovieNav } from '../movie-nav/movie-nav';
 import { Film } from '../../types/film';
 
 type Props = {
@@ -37,23 +38,10 @@ export const MovieCard: React.FC<Props> = ({ film, isFull = false }) => {
                         </div>
 
                         <div className={styles.description}>
-                            <nav className={styles.nav}>
-                                <ul className={styles.navList}>
-                                    <li className={`${styles.navItem} ${styles.navItemActive}`}>
-                                        <a href="#" className={styles.navLink}>Overview</a>
-                                    </li>
-                                    <li className={styles.navItem}>
-                                        <a href="#" className={styles.navLink}>Details</a>
-                                    </li>
-                                    <li className={styles.navItem}>
-                                        <a href="#" className={styles.navLink}>Reviews</a>
-                                    </li>
-                                </ul>
-                            </nav>
-
-                            <MovieOverview
-                                film={film}
+                            <MovieNav
+                                filmId={film.id}
                             />
+                            <Outlet />
                         </div>
                     </div>
                 </div>
