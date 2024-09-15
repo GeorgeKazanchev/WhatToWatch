@@ -1,6 +1,6 @@
 import { describe, it, expect } from '@jest/globals';
 import { Film } from '../../types/film';
-import { getGenres, getRuntimeString, getRatingLevel, getDateAttributeString } from './films-helper';
+import { getGenres, getRuntimeString, getRatingLevel, getDateAttributeString, getSimilarFilms } from './films-helper';
 
 const testFilms: Film[] = [
     {
@@ -163,5 +163,42 @@ describe('Get date attribute string', () => {
         const utcMonth = date.getUTCMonth() + 1;
         const utcDate = date.getUTCDate();
         expect(getDateAttributeString(date)).toEqual(`2024-${utcMonth}-0${utcDate}`);
+    });
+});
+
+describe('Get similar films', () => {
+    it('Should return 1 film', () => {
+        const selectedFilm = testFilms[2];
+        const similarFilms = getSimilarFilms(
+            selectedFilm,
+            [testFilms[1]]
+        );
+        expect(similarFilms).toHaveLength(1);
+        expect(similarFilms[0].genre).toBe(selectedFilm.genre);
+        expect(similarFilms[0].id).not.toBe(selectedFilm.id);
+    });
+
+    it('Should return 0 films when a film with another genre has been passed', () => {
+        const similarFilms = getSimilarFilms(
+            testFilms[2],
+            [testFilms[0]]
+        );
+        expect(similarFilms).toHaveLength(0);
+    });
+
+    it('Should return 0 films when all films array contains selected film only', () => {
+        const similarFilms = getSimilarFilms(
+            testFilms[2],
+            [testFilms[2]]
+        );
+        expect(similarFilms).toHaveLength(0);
+    });
+
+    it('Should return 0 films when all films array has a zero length', () => {
+        const similarFilms = getSimilarFilms(
+            testFilms[2],
+            []
+        );
+        expect(similarFilms).toHaveLength(0);
     });
 });

@@ -1,4 +1,5 @@
 import { Film } from '../../types/film';
+import { SIMILAR_FILMS_COUNT } from '../../settings';
 
 export const getGenres = (films: Film[]) => {
     return Array.from(new Set(films.map((film) => film.genre))).sort();
@@ -50,4 +51,10 @@ export const getDateAttributeString = (date: Date): string => {
     return `${date.getUTCFullYear()}-` +
         `${(date.getUTCMonth() + 1).toString().padStart(2, '0')}-` +
         `${date.getUTCDate().toString().padStart(2, '0')}`;
+};
+
+export const getSimilarFilms = (selectedFilm: Film, films: Film[]): Film[] => {
+    return films
+        .filter((film) => film.genre === selectedFilm.genre && film.id !== selectedFilm.id)
+        .slice(0, SIMILAR_FILMS_COUNT);
 };

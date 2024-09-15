@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import store from './store/store';
 import * as styles from './index.module.scss';
-import { App } from './components/app/app';
 import { Provider } from 'react-redux';
+import { AppRouterProvider } from './routes/router';
 import { setPromoFilm, loadFilms } from './store/reducers/films/films';
 import { setAuthInfo } from './store/reducers/user/user';
 import { promoFilm, films, authInfo } from './mocks';
@@ -24,6 +24,6 @@ store.dispatch(setAuthInfo(authInfo));
 const container = ReactDOM.createRoot(root);
 container.render(
     <Provider store={store}>
-        <App />
+        <AppRouterProvider />
     </Provider>
 );
