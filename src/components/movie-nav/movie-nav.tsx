@@ -6,13 +6,9 @@ export type Props = {
     filmId: number
 };
 
-const getNavLinkClassName = (isActive: boolean): string => {
-    let className = styles.navLink;
-    if (isActive) {
-        className += ` ${styles.navLinkActive}`;
-    }
-    return className;
-};
+const setNavLinkClassName = ({ isActive }: { isActive: boolean }): string => {
+    return `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`;
+}
 
 export const MovieNav: React.FC<Props> = ({ filmId }) => {
     return (
@@ -21,7 +17,7 @@ export const MovieNav: React.FC<Props> = ({ filmId }) => {
                 <li className={styles.navItem}>
                     <NavLink
                         to={`/films/${filmId}/overview`}
-                        className={({ isActive }) => getNavLinkClassName(isActive)}
+                        className={setNavLinkClassName}
                     >
                         Overview
                     </NavLink>
@@ -29,7 +25,7 @@ export const MovieNav: React.FC<Props> = ({ filmId }) => {
                 <li className={styles.navItem}>
                     <NavLink
                         to={`/films/${filmId}/details`}
-                        className={({ isActive }) => getNavLinkClassName(isActive)}
+                        className={setNavLinkClassName}
                     >
                         Details
                     </NavLink>
@@ -37,7 +33,7 @@ export const MovieNav: React.FC<Props> = ({ filmId }) => {
                 <li className={styles.navItem}>
                     <NavLink
                         to={`/films/${filmId}/reviews`}
-                        className={({ isActive }) => getNavLinkClassName(isActive)}
+                        className={setNavLinkClassName}
                     >
                         Reviews
                     </NavLink>
