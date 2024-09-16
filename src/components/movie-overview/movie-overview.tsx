@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import * as styles from './movie-overview.module.scss';
-import { Film } from '../../types/film';
+import { useLoaderData } from 'react-router-dom';
+import { LoaderData } from '../../types/loader-data';
 import { getRatingLevel } from '../../helpers';
+import type { filmPageLoaderType } from '../../routes/loaders/film-page';
 
-type Props = {
-    film: Film
-};
+export const MovieOverview: React.FC = () => {
+    const { film } = useLoaderData() as LoaderData<filmPageLoaderType>;
 
-export const MovieOverview: React.FC<Props> = ({ film }) => {
     return (
         <Fragment>
             <div className={styles.rating}>
