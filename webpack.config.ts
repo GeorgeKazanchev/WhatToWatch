@@ -14,7 +14,7 @@ export default (env: EnvVariables) => {
         mode: env.mode,
         port: env.port ?? 5000,
         paths: {
-            entry: path.resolve(__dirname, 'src', 'index.tsx'),
+            entry: path.resolve(__dirname, 'src', 'app', 'index.tsx'),
             output: path.resolve(__dirname, 'public')
         }
     });

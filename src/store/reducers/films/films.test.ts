@@ -1,7 +1,7 @@
 import filmsReducer, { FilmsState, loadFilms, setPromoFilm } from './films';
 import { it, expect } from '@jest/globals';
-import { Film } from '../../../types/film';
-import { promoFilm, films } from '../../../mocks/index';
+import { Film } from '../../../shared/types/film';
+import { promoFilm, films } from '../../../shared/mocks';
 
 type FilmsStateGetter = (promoFilm?: Film, films?: Film[]) => FilmsState;
 

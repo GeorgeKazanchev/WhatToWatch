@@ -1,0 +1,92 @@
+@import '../../../shared/ui/mixins.scss';
+
+$gradient-start: #170202;
+$gradient-end: #0c0101;
+$border-color-transition: border-color 0.2s;
+
+@mixin placeholder {
+    color: rgba(223, 207, 119, 0.27);
+    opacity: 1;
+}
+
+.visually-hidden {
+    @include visually-hidden;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 15px;
+    padding-bottom: 70px;
+    color: #c9b37e;
+    background-image: linear-gradient(-180deg, $gradient-start 0%, $gradient-end 100%);
+}
+
+.sing-in {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 165px;
+}
+
+.form {
+    margin-bottom: 37px;
+}
+
+.fields {
+    margin-bottom: 23px;
+}
+
+.field {
+    position: relative;
+    margin-bottom: 3px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 25px 20px;
+    font-size: 30px;
+    line-height: 44px;
+    font-weight: 300;
+    color: #dfcf77;
+    background-color: #2b1b1b;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: $border-color-transition;
+
+    &:focus {
+        border-color: #dfcf77;
+    }
+
+    &::placeholder {
+        @include placeholder;
+    }
+}
+
+.sign-in-button {
+    display: block;
+    width: 100%;
+    padding: 24px 40px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 44px;
+    color: #d9cd8d;
+    background: none;
+    border: 1px solid rgba(217, 205, 141, 0.41);
+    border-radius: 8px;
+    transition: $border-color-transition;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        border: 1px solid rgba(217, 205, 141, 0.7);
+    }
+}

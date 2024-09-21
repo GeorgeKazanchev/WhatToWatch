@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Film } from '../../../types/film';
+import { Film } from '../../../shared/types/film';
 
 type FilmsState = {
     promoFilm: Film | null,
@@ -21,9 +21,16 @@ export const filmsSlice = createSlice({
         loadFilms: (state: FilmsState = initialState, action: PayloadAction<Film[]>) => {
             state.films = action.payload;
         }
+    },
+    selectors: {
+        selectAllFilms: (state) => state.films,
+        selectFilmById: (state, filmId: number) => {
+            return state.films.find((film) => film.id === filmId);
+        }
     }
 });
 
 export default filmsSlice.reducer;
+export const { selectAllFilms, selectFilmById } = filmsSlice.selectors;
 export const { setPromoFilm, loadFilms } = filmsSlice.actions;
 export type { FilmsState };

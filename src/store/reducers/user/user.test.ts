@@ -1,7 +1,7 @@
 import userReducer, { UserState, setAuthInfo } from './user';
 import { it, expect } from '@jest/globals';
-import { AuthInfo } from '../../../types/auth-info';
-import { authInfo } from '../../../mocks/index';
+import { AuthInfo } from '../../../shared/types/auth-info';
+import { authInfo } from '../../../shared/mocks';
 
 type UserStateGetter = (authInfo?: AuthInfo | null) => UserState;
 
