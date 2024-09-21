@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import * as styles from './movie-card-info.module.scss';
+import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../../shared/hooks/redux-typed-hooks';
 import type { Film } from '../../../shared/types';
 
@@ -42,7 +43,12 @@ export const MovieCardInfo: React.FC<Props> = ({ film, isFull = false }) => {
                         <span>My list</span>
                     </button>
                     {isAuthorized && (
-                        <a href="add-review.html" className={styles.button}>Add review</a>
+                        <Link
+                            to={`/films/${film.id}/review`}
+                            className={styles.button}
+                        >
+                            Add review
+                        </Link>
                     )}
                 </div>
             </div>
