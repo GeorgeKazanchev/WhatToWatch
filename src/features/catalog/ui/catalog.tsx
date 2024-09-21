@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './catalog.module.scss';
 import { SmallMovieCard } from '../../../entities/small-movie-card';
-import { getGenres } from '../helpers/helpers';
+import { getCatalogTitle, getGenres } from '../helpers/helpers';
 import type { Film } from '../../../shared/types';
 
 type Props = {
@@ -15,7 +15,7 @@ export const Catalog: React.FC<Props> = ({ films, isSimilarShown = false }) => {
     return (
         <section className={`${styles.catalog} ${isSimilarShown ? styles.catalogLikeThis : ''}`}>
             <h2 className={`${styles.title} ${isSimilarShown ? '' : styles.visuallyHidden}`}>
-                {isSimilarShown ? 'More like this' : 'Catalog'}
+                {getCatalogTitle(films, isSimilarShown)}
             </h2>
 
             {!isSimilarShown && (
