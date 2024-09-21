@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
-import { createBrowserRouter, Outlet, redirect, RouterProvider, ScrollRestoration } from 'react-router-dom';
-import { App } from '../ui/app/app';
-import { FilmPage } from '../../pages/film-page';
-import { MovieOverview } from '../../entities/movie-overview';
-import { MovieDetails } from '../../entities/movie-details';
-import { MovieReviews } from '../../entities/movie-reviews';
+import { createBrowserRouter, Navigate, Outlet, RouterProvider, ScrollRestoration } from 'react-router-dom';
+import { useAppSelector } from '../../shared/hooks/redux-typed-hooks';
+import { mainPageRoute } from './routes/main-page-route';
+import { filmPageRoutes } from './routes/film-page-routes';
+import { videoPlayerPageRoute } from './routes/video-player-page-route';
 import { NotFoundPage } from '../../pages/not-found-page';
-import { comments } from '../../shared/mocks';
+import { MyListPage } from '../../pages/my-list-page';
+import { AddReviewPage } from '../../pages/add-review-page';
+import { LoginPage } from '../../pages/login-page';
 
 const Root: React.FC = () => {
     return (
@@ -18,42 +19,62 @@ const Root: React.FC = () => {
 }
 
 export const AppRouterProvider = () => {
-    const router = createBrowserRouter([
-        {
-            path: '/',
-            element: <Root />,
-            errorElement: <NotFoundPage />,
-            children: [
-                {
-                    index: true,
-                    element: <App />
-                },
-                {
-                    path: 'films/:id',
-                    element: <FilmPage />,
-                    children: [
-                        {
-                            index: true,
-                            loader: async () => redirect('overview')
-                        },
-                        {
-                            path: 'overview',
-                            element: <MovieOverview />
-                        },
-                        {
-                            path: 'details',
-                            element: <MovieDetails />
-                        },
-                        {
-                            path: 'reviews',
-                            element: <MovieReviews
-                                reviews={comments}      //  TODO: Change data in props to real one (not mocks)
-                            />
-                        }
-                    ]
-                }
-            ]
-        }
-    ]);
+    const authInfo = useAppSelector((state) => state.user.authInfo);
+    const isAuthorized = !!authInfo;
+
+    let router;
+
+    if (isAuthorized) {
+        router = createBrowserRouter([
+            {
+                path: '/',
+                element: <Root />,
+                errorElement: <NotFoundPage />,
+                children: [
+                    mainPageRoute,
+                    {
+                        path: 'login',
+                        element: <Navigate to='/' replace={true} />
+                    },
+                    {
+                        path: 'mylist',
+                        element: <MyListPage />
+                    },
+                    {
+                        path: 'films/:id/review',
+                        element: <AddReviewPage />
+                    },
+                    videoPlayerPageRoute,
+                    filmPageRoutes,
+                ]
+            }
+        ]);
+    } else {
+        router = createBrowserRouter([
+            {
+                path: '/',
+                element: <Root />,
+                errorElement: <NotFoundPage />,
+                children: [
+                    mainPageRoute,
+                    {
+                        path: 'login',
+                        element: <LoginPage />
+                    },
+                    {
+                        path: 'mylist',
+                        element: <Navigate to='/login' replace={true} />
+                    },
+                    {
+                        path: 'films/:id/review',
+                        element: <Navigate to='/login' replace={true} />
+                    },
+                    videoPlayerPageRoute,
+                    filmPageRoutes
+                ]
+            }
+        ]);
+    }
+
     return <RouterProvider router={router} />;
 };
