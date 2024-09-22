@@ -3,6 +3,7 @@ import * as styles from './main-page.module.scss';
 import { useAppSelector } from '../../../shared/hooks/redux-typed-hooks';
 import { MovieCard } from '../../../features/movie-card';
 import { Catalog } from '../../../features/catalog';
+import { ShowMoreButton } from '../../../entities/show-more-button';
 import { Footer } from '../../../entities/footer';
 
 export const MainPage: React.FC = () => {
@@ -22,7 +23,11 @@ export const MainPage: React.FC = () => {
             <div className={styles.content}>
                 <Catalog
                     films={films}
-                />
+                    isGenresShown={true}
+                >
+                    <ShowMoreButton />
+                </Catalog>
+
                 <Footer
                     isMainPage={true}
                 />

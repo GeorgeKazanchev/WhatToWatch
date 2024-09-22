@@ -6,10 +6,12 @@ import type { Film } from '../../../shared/types';
 
 type Props = {
     films: Film[],
-    isSimilarShown?: boolean
+    isGenresShown?: boolean,
+    isSimilarShown?: boolean,
+    children?: React.ReactNode
 };
 
-export const Catalog: React.FC<Props> = ({ films, isSimilarShown = false }) => {
+export const Catalog: React.FC<Props> = ({ films, isGenresShown = false, isSimilarShown = false, children }) => {
     const genres = getGenres(films);
 
     return (
@@ -18,7 +20,7 @@ export const Catalog: React.FC<Props> = ({ films, isSimilarShown = false }) => {
                 {getCatalogTitle(films, isSimilarShown)}
             </h2>
 
-            {!isSimilarShown && (
+            {isGenresShown && (
                 <ul className={styles.genres}>
                     <li className={`${styles.genre} ${styles.genreActive}`}>
                         <a href="#" className={styles.genreLink}>All genres</a>
@@ -41,11 +43,7 @@ export const Catalog: React.FC<Props> = ({ films, isSimilarShown = false }) => {
                 )}
             </div>
 
-            {!isSimilarShown && (
-                <div>
-                    <button className={styles.moreButton} type="button">Show more</button>
-                </div>
-            )}
+            {children}
         </section>
     );
 };

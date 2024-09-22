@@ -1,0 +1,18 @@
+.button {
+    display: block;
+    width: 100%;
+    padding: 29px 40px;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    color: #d9ca74;
+    background: none;
+    border: 1px solid rgba(217, 202, 116, 0.2);
+    border-radius: 8px;
+    transition: border-color 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        border-color: rgba(217, 202, 116, 0.5);
+    }
+}
