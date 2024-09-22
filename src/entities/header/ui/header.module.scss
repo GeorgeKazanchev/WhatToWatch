@@ -12,7 +12,21 @@
 }
 
 .header-user-page {
-    margin-bottom: 40px;
-    width: 100%;
     position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    right: 200px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 300;
+    color: #dfcf77;
+    transform: translateY(-50%);
 }

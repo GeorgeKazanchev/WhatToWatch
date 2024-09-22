@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import * as styles from './movie-card-content.module.scss';
 import { Header } from '../../header';
+import { UserBlock } from '../../user-block';
 import { MovieCardInfo } from '../../movie-card-info';
 import type { Film } from '../../../shared/types';
 
@@ -21,7 +22,9 @@ export const MovieCardContent: React.FC<Props> = ({ film, isFull = false }) => {
             <Header
                 isMainPage={!isFull}
                 isMoviePage={true}
-            />
+            >
+                <UserBlock />
+            </Header>
 
             <div className={styles.wrap}>
                 {isFull

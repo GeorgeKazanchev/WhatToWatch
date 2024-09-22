@@ -8,6 +8,7 @@ export const LoginPage: React.FC = () => {
         <div className={styles.page}>
             <Header
                 isUserPage={true}
+                title='Sign in'
             />
 
             <div className={styles.singIn}>

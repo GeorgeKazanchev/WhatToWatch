@@ -1,19 +1,22 @@
 import React from 'react';
 import * as styles from './header.module.scss';
 import { Logo } from '../../logo';
-import { UserBlock } from '../../user-block';
 
 type Props = {
     isMainPage?: boolean,
     isMoviePage?: boolean,
-    isUserPage?: boolean
+    isUserPage?: boolean,
+    title?: string | null,
+    children?: React.ReactNode,
 };
 
 export const Header: React.FC<Props> = (props) => {
     const {
         isMainPage = false,
         isMoviePage = false,
-        isUserPage = false
+        isUserPage = false,
+        title = null,
+        children
     } = props;
 
     return (
@@ -24,7 +27,12 @@ export const Header: React.FC<Props> = (props) => {
                 isMainPage={isMainPage}
                 isLight={false}
             />
-            <UserBlock />
+
+            {title && (
+                <h1 className={styles.title}>{title}</h1>
+            )}
+
+            {children}
         </header>
     );
 };
