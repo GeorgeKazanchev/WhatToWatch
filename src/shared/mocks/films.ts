@@ -2,6 +2,35 @@ import type { Film } from '../types/film';
 
 export const films: Film[] = [
     {
+        id: 1,
+        title: 'The Grand Budapest Hotel',
+        images: {
+            posterSrc: 'img/the-grand-budapest-hotel-poster.jpg',
+            previewSrc: 'img/the-grand-budapest-hotel.jpg',
+            backgroundSrc: 'img/bg-the-grand-budapest-hotel.jpg',
+            backgroundColor: '#e1b0b2'
+        },
+        videos: {
+            videoLink: '#',
+            previewVideoLink: '#'
+        },
+        description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.',
+        rating: 8.9,
+        scoresCount: 240,
+        director: 'Wes Andreson',
+        starring: [
+            'Bill Murray',
+            'Edward Norton',
+            'Jude Law',
+            'Willem Dafoe',
+            'Saoirse Ronan'
+        ],
+        runtimeInMinutes: 99,
+        genre: 'Comedy',
+        releaseYear: 2014,
+        isFavorite: true
+    },
+    {
         id: 2,
         title: 'Fantastic Beasts: The Crimes of Grindelwald',
         images: {
@@ -150,7 +179,7 @@ export const films: Film[] = [
             previewVideoLink: '#'
         },
         description: 'A look into the nightly lives of four vampires who have lived together on Staten Island for over a century.',
-        rating: 0.0,
+        rating: 7.6,
         scoresCount: 492,
         director: 'Jemaine Clement',
         starring: [
@@ -501,7 +530,7 @@ export const films: Film[] = [
             previewVideoLink: '#'
         },
         description: 'In the late 1970s, two FBI agents broaden the realm of criminal science by investigating the psychology behind murder and end up getting too close to real-life monsters.',
-        rating: 0.0,
+        rating: 8.6,
         scoresCount: 988,
         director: 'Joe Penhall',
         starring: [

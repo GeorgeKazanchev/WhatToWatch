@@ -10,6 +10,7 @@ $light-color: #eee5b5;
     &-full {
         min-height: 100vh;
         padding-bottom: 45px;
+        background-color: rgb(23, 2, 2);
         background-image: linear-gradient(180deg, #000000 0%, rgb(23, 2, 2));
     }
 }

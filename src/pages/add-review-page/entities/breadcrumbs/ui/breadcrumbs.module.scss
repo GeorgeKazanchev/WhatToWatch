@@ -1,0 +1,35 @@
+.breadcrumbs {
+    margin: 0 20px;
+}
+
+.list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item {
+    display: flex;
+
+    &:not(:last-child)::after {
+        content: '/';
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 17px;
+        line-height: 20px;
+    }
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    color: #eee5b5;
+    font-size: 17px;
+    line-height: 20px;
+    transition: color 0.2s;
+
+    &[href]:hover {
+        color: #dfcf77;
+    }
+}
