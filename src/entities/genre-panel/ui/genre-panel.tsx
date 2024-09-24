@@ -1,6 +1,6 @@
 import React from 'react';
 import * as styles from './genre-panel.module.scss';
-import { MAX_SHOWN_GENRES } from '../../../shared/consts/films';
+import { MAX_SHOWN_GENRES } from '../consts/consts';
 
 type Props = {
     genres: string[]

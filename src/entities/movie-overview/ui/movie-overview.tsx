@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getRatingLevel } from '../helpers/helpers';
 import { useAppSelector } from '../../../shared/hooks/redux-typed-hooks';
 import { selectFilmById } from '../../../store/reducers/films/films';
+import { MAX_SHOWN_ACTORS } from '../consts/consts';
 
 export const MovieOverview: React.FC = () => {
     const { id } = useParams();
@@ -12,6 +13,11 @@ export const MovieOverview: React.FC = () => {
     const film = useAppSelector((state) => selectFilmById(state, filmId));
     if (!film) {
         throw new Error('Film is not found');
+    }
+
+    let starring = film.starring.slice(0, MAX_SHOWN_ACTORS).join(', ');
+    if (film.starring.length > MAX_SHOWN_ACTORS) {
+        starring += ' and other';
     }
 
     return (
@@ -27,7 +33,6 @@ export const MovieOverview: React.FC = () => {
             </div>
 
             <div className={styles.details}>
-                {/* TODO: The description should be divided into several lines */}
                 <p className={styles.detailsItem}>
                     {film.description}
                 </p>
@@ -36,9 +41,8 @@ export const MovieOverview: React.FC = () => {
                     <strong className={styles.detailsTitle}>Director:</strong> {film.director}
                 </p>
 
-                {/* TODO: Should be shown like this: ActorA, ActorB and ActorC */}
                 <p className={`${styles.detailsItem} ${styles.starring}`}>
-                    <strong className={styles.detailsTitle}>Starring:</strong> {film.starring.join(', ')}
+                    <strong className={styles.detailsTitle}>Starring:</strong> {starring}
                 </p>
             </div>
         </Fragment>
