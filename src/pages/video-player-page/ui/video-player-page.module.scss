@@ -1,0 +1,153 @@
+$primary-color: #d9cd8d;
+
+.page {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exit {
+    position: absolute;
+    top: 37px;
+    right: 32px;
+    z-index: 2;
+    display: block;
+    width: 93px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 26px;
+    color: #eee5b5;
+    background-color: rgba(255, 249, 217, 0.12);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.controls {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 25px;
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.time {
+    position: relative;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.progress {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 251, 231, 0.35);
+    border: none;
+    border-radius: 1px;
+
+    &::-moz-progress-bar {
+        background-color: $primary-color;
+    }
+
+    &::-webkit-progress-bar {
+        background-color: rgba(255, 251, 231, 0.35);
+    }
+
+    &::-webkit-progress-value {
+        background-color: $primary-color;
+    }
+}
+
+.toggler {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 17px;
+    height: 17px;
+    font-size: 0;
+    background-color: $primary-color;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.time-value {
+    flex-shrink: 0;
+    width: 60px;
+    text-align: right;
+    font-size: 14px;
+    color: #fff9d9;
+}
+
+.play-button {
+    display: block;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    font-size: 0;
+    background: none;
+    border: none;
+    transition: 0.2s transform;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    img,
+    svg {
+        vertical-align: top;
+    }
+}
+
+.title {
+    margin: 0 30px;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: bold;
+    color: #b3ae98;
+}
+
+.fullscreen-button {
+    display: block;
+    width: 27px;
+    height: 27px;
+    margin-left: auto;
+    padding: 0;
+    font-size: 0;
+    background: none;
+    border: none;
+    transition: 0.2s transform;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    img,
+    svg {
+        vertical-align: top;
+    }
+}
