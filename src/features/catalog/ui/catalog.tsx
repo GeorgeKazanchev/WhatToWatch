@@ -1,6 +1,7 @@
 import React from 'react';
 import * as styles from './catalog.module.scss';
 import { SmallMovieCard } from '../../../entities/small-movie-card';
+import { GenrePanel } from '../../../entities/genre-panel';
 import { getCatalogTitle, getGenres } from '../helpers/helpers';
 import type { Film } from '../../../shared/types';
 
@@ -21,17 +22,9 @@ export const Catalog: React.FC<Props> = ({ films, isGenresShown = false, isSimil
             </h2>
 
             {isGenresShown && (
-                <ul className={styles.genres}>
-                    <li className={`${styles.genre} ${styles.genreActive}`}>
-                        <a href="#" className={styles.genreLink}>All genres</a>
-                    </li>
-
-                    {genres.map((genre) =>
-                        <li key={genre} className={styles.genre}>
-                            <a href="#" className={styles.genreLink}>{genre}</a>
-                        </li>
-                    )}
-                </ul>
+                <GenrePanel
+                    genres={genres}
+                />
             )}
 
             <div className={styles.movies}>
