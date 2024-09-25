@@ -8,7 +8,7 @@ import { Footer } from '../../../entities/footer';
 
 export const MainPage: React.FC = () => {
     const promoFilm = useAppSelector((state) => state.films.promoFilm);
-    const films = useAppSelector((state) => state.films.films);
+    const films = useAppSelector((state) => state.films.shownFilms);
 
     if (!promoFilm) {
         throw new Error('');    //  TODO: Handle this situation correctly

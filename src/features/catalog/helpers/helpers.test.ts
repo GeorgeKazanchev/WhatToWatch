@@ -1,5 +1,5 @@
 import { describe, it, expect } from '@jest/globals';
-import { getCatalogTitle, getGenres } from './helpers';
+import { getCatalogTitle } from './helpers';
 import type { Film } from '../../../shared/types';
 
 const testFilms: Film[] = [
@@ -85,30 +85,6 @@ const testFilms: Film[] = [
         isFavorite: true
     }
 ];
-
-describe('Get genres', () => {
-    it('Should return 2 genres from 2 films with different genres', () => {
-        const genres = getGenres([testFilms[0], testFilms[1]]);
-        expect(genres).toHaveLength(2);
-        expect(genres).toContain('Biography');
-        expect(genres).toContain('Fantasy');
-    });
-
-    it('Should return 1 genre from 2 films with the same genre', () => {
-        const genres = getGenres([testFilms[1], testFilms[2]]);
-        expect(genres).toHaveLength(1);
-        expect(genres).toContain('Biography');
-    });
-
-    it('Should return 1 genre from 1 film', () => {
-        const genres = getGenres([testFilms[0]]);
-        expect(genres).toHaveLength(1);
-    });
-
-    it('Should return an empty genre list', () => {
-        expect(getGenres([])).toEqual([]);
-    });
-});
 
 describe('Get catalog title', () => {
     it('Should return "Catalog" if there is not a film page', () => {
