@@ -19,7 +19,11 @@ export const getRatingStars = (): JSX.Element[] => {
                     onChange={() => { console.log(`Rating ${i} is checked`); }}
                 />
                 <label
-                    className={styles.ratingLabel}
+                    className={
+                        `${styles.ratingLabel}
+                        ${i <= defaultRatingChecked ? styles.ratingLabelActive : ''}
+                        ${i - defaultRatingChecked === 1 ? styles.ratingLabelCheckedNext : ''}`
+                    }
                     htmlFor={`star-${i}`}
                 >
                     {`Rating ${i}`}
